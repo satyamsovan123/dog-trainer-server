@@ -15,13 +15,12 @@ const webFrontendURL =
 
 app.use(
   cors({
-    origin: webFrontendURL,
+    origin: "https://dogtrainer-2210.web.app",
     methods: ["GET", "POST"],
     exposedHeaders: serverConstant.AUTHORIZATION_HEADER_KEY,
   })
 );
 
-// app.use(cors());
 app.use(express.json());
 // app.use((req, res, next) => {
 //   res.header(
