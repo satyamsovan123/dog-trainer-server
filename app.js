@@ -15,7 +15,7 @@ const webFrontendURL =
 
 app.use(
   cors({
-    origin: "https://dogtrainer-2210.web.app",
+    origin: ["https://dogtrainer-2210.web.app"],
     methods: ["GET", "POST"],
     exposedHeaders: serverConstant.AUTHORIZATION_HEADER_KEY,
   })
