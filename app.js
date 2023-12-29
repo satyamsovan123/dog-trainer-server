@@ -8,14 +8,7 @@ const { serverConstant } = require("./constants/serverConstant");
 const app = express();
 const routes = require("./app/routes");
 
-app.use(
-  cors({
-    origin: ["https://dogtrainer-2210.web.app/"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-    exposedHeaders: ["Authorization"],
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
