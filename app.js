@@ -13,11 +13,17 @@ const webFrontendURL =
     ? "https://dogtrainer-2210.web.app"
     : "http://localhost:4200";
 
+// app.use(
+//   cors({
+//     origin: webFrontendURL,
+//     methods: ["GET", "POST"],
+//     exposedHeaders: serverConstant.AUTHORIZATION_HEADER_KEY,
+//   })
+// );
+
 app.use(
   cors({
-    origin: webFrontendURL,
-    methods: ["GET", "POST"],
-    exposedHeaders: serverConstant.AUTHORIZATION_HEADER_KEY,
+    origin: "https://dogtrainer-2210.web.app",
   })
 );
 

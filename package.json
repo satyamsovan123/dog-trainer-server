@@ -1,7 +1,7 @@
 {
-  "name": "base-server",
+  "name": "dog-trainer-server",
   "version": "1.0.0",
-  "description": "This is the base server for Node JS projects.",
+  "description": "This is the backend for DogTrainer application.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "production": "NODE_ENV=production node app.js"
   },
   "keywords": [
-    "base-node-server, node-backend"
+    "dog-trainer-server, DogTrainer"
   ],
   "author": "satyamsovan123",
   "license": "ISC",
