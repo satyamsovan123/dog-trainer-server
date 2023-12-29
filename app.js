@@ -8,11 +8,6 @@ const { serverConstant } = require("./constants/serverConstant");
 const app = express();
 const routes = require("./app/routes");
 
-const webFrontendURL =
-  appConfig.environment === "production"
-    ? "https://dogtrainer-2210.web.app"
-    : "http://localhost:4200";
-
 // app.use(
 //   cors({
 //     origin: webFrontendURL,
@@ -23,7 +18,7 @@ const webFrontendURL =
 
 app.use(
   cors({
-    origin: "https://dogtrainer-2210.web.app",
+    origin: "*",
   })
 );
 
