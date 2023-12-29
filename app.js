@@ -8,37 +8,17 @@ const { serverConstant } = require("./constants/serverConstant");
 const app = express();
 const routes = require("./app/routes");
 
-// app.use(
-//   cors({
-//     origin: webFrontendURL,
-//     methods: ["GET", "POST"],
-//     exposedHeaders: serverConstant.AUTHORIZATION_HEADER_KEY,
-//   })
-// );
-
-const webFrontendURL =
-  appConfig.environment === "production"
-    ? "https://drink-diary-web.web.app"
-    : "http://localhost:4200";
-
 app.use(
   cors({
-    origin: ["https://drink-diary-web.web.app"],
-    methods: ["GET", "POST", "PUT", "OPTIONS"],
-    exposedHeaders: serverConstant.AUTHORIZATION_HEADER_KEY,
+    origin: ["https://dogtrainer-2210.web.app/"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+    exposedHeaders: ["Authorization"],
   })
 );
 
-app.options("*", cors()); // Enable preflight CORS for all routes
-
 app.use(express.json());
-// app.use((req, res, next) => {
-//   res.header(
-//     "Access-Control-Expose-Headers",
-//     serverConstant.AUTHORIZATION_HEADER_KEY
-//   );
-//   next();
-// });
+
 app.use(routes);
 
 process.on("SIGINT", () => {
