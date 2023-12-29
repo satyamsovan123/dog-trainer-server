@@ -21,20 +21,8 @@ app.use(
   })
 );
 
-// app.use(
-//   cors({
-//     origin: "https://dogtrainer-2210.web.app",
-//   })
-// );
-
 app.use(express.json());
-// app.use((req, res, next) => {
-//   res.header(
-//     "Access-Control-Expose-Headers",
-//     serverConstant.AUTHORIZATION_HEADER_KEY
-//   );
-//   next();
-// });
+
 app.use(routes);
 
 process.on("SIGINT", () => {
