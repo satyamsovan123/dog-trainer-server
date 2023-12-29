@@ -18,7 +18,7 @@ const routes = require("./app/routes");
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://dogtrainer-2210.web.app",
   })
 );
 
