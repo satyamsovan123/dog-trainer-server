@@ -23,7 +23,7 @@ const webFrontendURL =
 
 app.use(
   cors({
-    origin: webFrontendURL,
+    origin: ["https://drink-diary-web.web.app"],
     methods: ["GET", "POST", "PUT", "OPTIONS"],
     exposedHeaders: serverConstant.AUTHORIZATION_HEADER_KEY,
   })
