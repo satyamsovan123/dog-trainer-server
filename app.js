@@ -29,6 +29,8 @@ app.use(
   })
 );
 
+app.options("*", cors()); // Enable preflight CORS for all routes
+
 app.use(express.json());
 // app.use((req, res, next) => {
 //   res.header(
