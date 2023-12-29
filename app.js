@@ -8,10 +8,33 @@ const { serverConstant } = require("./constants/serverConstant");
 const app = express();
 const routes = require("./app/routes");
 
-app.use(cors());
+const webFrontendURL =
+  appConfig.environment === "production"
+    ? "https://dogtrainer-2210.web.app"
+    : "http://localhost:4200";
+
+app.use(
+  cors({
+    origin: webFrontendURL,
+    methods: ["GET", "POST"],
+    exposedHeaders: serverConstant.AUTHORIZATION_HEADER_KEY,
+  })
+);
+
+// app.use(
+//   cors({
+//     origin: "https://dogtrainer-2210.web.app",
+//   })
+// );
 
 app.use(express.json());
-
+// app.use((req, res, next) => {
+//   res.header(
+//     "Access-Control-Expose-Headers",
+//     serverConstant.AUTHORIZATION_HEADER_KEY
+//   );
+//   next();
+// });
 app.use(routes);
 
 process.on("SIGINT", () => {
