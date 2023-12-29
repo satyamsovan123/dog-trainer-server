@@ -16,9 +16,16 @@ const routes = require("./app/routes");
 //   })
 // );
 
+const webFrontendURL =
+  appConfig.environment === "production"
+    ? "https://drink-diary-web.web.app"
+    : "http://localhost:4200";
+
 app.use(
   cors({
-    origin: "https://dogtrainer-2210.web.app",
+    origin: webFrontendURL,
+    methods: ["GET", "POST", "PUT", "OPTIONS"],
+    exposedHeaders: serverConstant.AUTHORIZATION_HEADER_KEY,
   })
 );
 
