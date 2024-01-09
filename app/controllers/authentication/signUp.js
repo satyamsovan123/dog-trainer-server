@@ -23,9 +23,9 @@ const signUp = async (req, res) => {
 
     const newPetProfile = new PetProfile({
       email: userData.email,
-      petName: "UNKNOWN",
-      petBreed: "UNKNOWN",
-      petGender: "UNKNOWN",
+      petName: "Shadow",
+      petBreed: "German Shepherd",
+      petGender: "Male",
       petDOB: new Date(),
     });
 
