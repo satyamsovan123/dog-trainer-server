@@ -4,7 +4,7 @@ const router = express.Router();
 const { verifyJWT, verifyPetProfileRequest } = require("../middlewares");
 const { getPetProfile, updatePetProfile } = require("../controllers");
 
-router.get("/getpetprofile", verifyJWT, getPetProfile);
+router.get("/getPetprofile", verifyJWT, getPetProfile);
 router.post(
   "/updatepetprofile",
   verifyJWT,

@@ -12,7 +12,7 @@ const {
 
 const { checkExistingData } = require("./data/utils/dataManipulationHelper");
 const { getCourseDetails } = require("./data/getCourseDetails");
-const { getPetProfile } = require("./petProfile/getpetProfile");
+const { getPetProfile } = require("./petProfile/getPetProfile");
 const { updatePetProfile } = require("./petProfile/updatePetProfile");
 
 module.exports = {
