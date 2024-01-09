@@ -12,6 +12,8 @@ const {
 
 const { checkExistingData } = require("./data/utils/dataManipulationHelper");
 const { getCourseDetails } = require("./data/getCourseDetails");
+const { getPetProfile } = require("./petProfile/getpetProfile");
+const { updatePetProfile } = require("./petProfile/updatePetProfile");
 
 module.exports = {
   signUp,
@@ -25,4 +27,6 @@ module.exports = {
   encryptPassword,
   checkExistingData,
   getCourseDetails,
+  getPetProfile,
+  updatePetProfile,
 };

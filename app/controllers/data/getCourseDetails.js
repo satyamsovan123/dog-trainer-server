@@ -18,7 +18,6 @@ const getCourseDetails = async (req, res) => {
       );
       return res.status(generatedResponse.code).send(generatedResponse);
     }
-
     const generatedResponse = responseBuilder(
       data,
       userActionConstant.GET_ALL_COURSE_DETAILS_SUCCESS,

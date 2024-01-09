@@ -1,5 +1,7 @@
 const Data = require("./databaseModels/Data");
 const User = require("./databaseModels/User");
+const PetProfile = require("./databaseModels/PetProfile");
+const CourseDetail = require("./databaseModels/CourseDetail");
 
 const {
   AuthenticationDataValidator,
@@ -10,11 +12,11 @@ const {
 } = require("./requestValidators/GetDataByTitleRequestValidator");
 
 const { PostDataValidator } = require("./requestValidators/PostDataValidator");
-const CourseDetail = require("./databaseModels/CourseDetail");
 
 module.exports = {
   Data,
   User,
+  PetProfile,
   CourseDetail,
   PostDataValidator,
   AuthenticationDataValidator,

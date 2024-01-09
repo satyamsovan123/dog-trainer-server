@@ -8,7 +8,11 @@ const {
   verifyPostDataRequest,
   verifyGetDataByTitleRequest,
 } = require("../middlewares");
-const { getCourseDetails } = require("../controllers");
+const {
+  getCourseDetails,
+  getPetName,
+  updatePetName,
+} = require("../controllers");
 
 router.get("/getalldata", verifyJWT, getAllData);
 router.get("/getcoursedetails", verifyJWT, getCourseDetails);

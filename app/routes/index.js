@@ -6,6 +6,7 @@ const { serverConstant, statusCodeConstant } = require("../../constants/");
 const baseURL = serverConstant.BASE_API;
 router.use(baseURL, require("./authentication"));
 router.use(baseURL, require("./data"));
+router.use(baseURL, require("./petProfile"));
 
 router.get("/", (req, res) => {
   try {

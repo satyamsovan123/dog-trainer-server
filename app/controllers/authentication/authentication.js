@@ -20,7 +20,6 @@ const authentication = async (req, res) => {
     );
     if (!isPasswordValid) {
       const generatedResponse = responseBuilder(
-        {},
         userActionConstant.PROVIDE_VALID_CREDENTIALS,
         statusCodeConstant.UNAUTHORIZED
       );

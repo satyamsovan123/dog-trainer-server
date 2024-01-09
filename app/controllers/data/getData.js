@@ -5,12 +5,15 @@ const {
   userActionConstant,
 } = require("../../../constants");
 const { checkExistingData } = require("./utils/dataManipulationHelper");
-const { Data } = require("../../models");
+const { Data, User } = require("../../models");
 
 const getDataByTitle = async (req, res) => {
   try {
-    const title = req.body.title;
+    const userData = req.body;
+    const title = userData.title;
+
     const data = await checkExistingData(title);
+
     if (!data || data.length === 0) {
       const generatedResponse = responseBuilder(
         {},
@@ -40,6 +43,7 @@ const getDataByTitle = async (req, res) => {
 const getAllData = async (req, res) => {
   try {
     const data = await Data.find({}).select("title data -_id");
+
     if (!data) {
       const generatedResponse = responseBuilder(
         {},

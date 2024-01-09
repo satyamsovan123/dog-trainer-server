@@ -4,7 +4,7 @@ const { userActionConstant, serverConstant } = require("../../../constants");
 class AuthenticationDataValidator {
   constructor(data = {}) {
     this.data = data;
-    this.validatorSchema = Joi.object({
+    (this.validatorSchema = Joi.object({
       email: Joi.string()
         .required()
         .email()
@@ -24,8 +24,8 @@ class AuthenticationDataValidator {
         }),
     }).messages({
       "object.unknown": `${userActionConstant.REDUNDANT_DATA}`,
-    });
-    this.validationResult = this.validatorSchema.validateAsync(data);
+    })),
+      (this.validationResult = this.validatorSchema.validateAsync(data));
   }
 
   async getValidationResult() {

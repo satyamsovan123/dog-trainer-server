@@ -10,7 +10,7 @@ const checkExistingUser = async (email) => {
     return cursorData;
   }
   await User.findOne({ email: email })
-    .select("email password")
+    .select("email password petName")
     .then((result) => {
       cursorData = result;
     })

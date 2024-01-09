@@ -5,7 +5,11 @@ const {
   userActionConstant,
   serverConstant,
 } = require("../../../constants");
-const { AuthenticationDataValidator, User } = require("../../models");
+const {
+  AuthenticationDataValidator,
+  User,
+  PetProfile,
+} = require("../../models");
 const {
   checkExistingUser,
   generateJWT,
@@ -16,10 +20,23 @@ const signUp = async (req, res) => {
   try {
     const userData = req.body;
     const encryptedPassword = await encryptPassword(userData.password);
+
+    const newPetProfile = new PetProfile({
+      email: userData.email,
+      petName: "UNKNOWN",
+      petBreed: "UNKNOWN",
+      petGender: "UNKNOWN",
+      petDOB: new Date(),
+    });
+
+    await PetProfile.create(newPetProfile);
+
     const newUser = new User({
       email: userData.email,
       password: encryptedPassword,
+      petProfile: newPetProfile._id,
     });
+
     await User.create(newUser);
 
     const token = await generateJWT({ email: userData.email });

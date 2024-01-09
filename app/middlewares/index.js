@@ -3,6 +3,7 @@ const {
   verifyAuthenticationDataRequest,
 } = require("./verifyAuthenticationDataRequest");
 const { verifyPostDataRequest } = require("./verifyPostDataRequest");
+const { verifyPetProfileRequest } = require("./verifyPetProfileRequest");
 
 const {
   verifyGetDataByTitleRequest,
@@ -13,4 +14,5 @@ module.exports = {
   verifyPostDataRequest,
   verifyAuthenticationDataRequest,
   verifyGetDataByTitleRequest,
+  verifyPetProfileRequest,
 };
