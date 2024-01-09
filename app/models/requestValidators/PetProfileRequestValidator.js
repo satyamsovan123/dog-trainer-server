@@ -15,24 +15,28 @@ class PetProfileRequestValidator {
         }),
       petName: Joi.string()
         .required()
+        .allow("")
         .messages({
-          "string.empty": `${userActionConstant.PET_NAME} ${userActionConstant.IS_EMPTY} ${userActionConstant.PROVIDE_VALID_DATA}`,
           "any.required": `${userActionConstant.PET_NAME} ${userActionConstant.IS_REQUIRED} ${userActionConstant.PROVIDE_VALID_DATA}`,
         }),
       petBreed: Joi.string()
         .required()
+        .allow("")
+
         .messages({
-          "string.empty": `${userActionConstant.PET_BREED} ${userActionConstant.IS_EMPTY} ${userActionConstant.PROVIDE_VALID_DATA}`,
           "any.required": `${userActionConstant.PET_BREED} ${userActionConstant.IS_REQUIRED} ${userActionConstant.PROVIDE_VALID_DATA}`,
         }),
       petGender: Joi.string()
         .required()
+        .allow("")
+
         .messages({
-          "string.empty": `${userActionConstant.PET_GENDER} ${userActionConstant.IS_EMPTY} ${userActionConstant.PROVIDE_VALID_DATA}`,
           "any.required": `${userActionConstant.PET_GENDER} ${userActionConstant.IS_REQUIRED} ${userActionConstant.PROVIDE_VALID_DATA}`,
         }),
       petDOB: Joi.date()
         .required()
+        .allow("")
+
         .messages({
           "date.base": `${userActionConstant.PET_DOB} ${userActionConstant.IS_INVALID} ${userActionConstant.PROVIDE_VALID_DATA}`,
           "any.required": `${userActionConstant.PET_DOB} ${userActionConstant.IS_REQUIRED} ${userActionConstant.PROVIDE_VALID_DATA}`,
@@ -47,6 +51,7 @@ class PetProfileRequestValidator {
     try {
       await this.validationResult;
     } catch (error) {
+      console.log(error);
       return error?.message ?? serverConstant.ERROR_OCCURRED_WHILE_VERIFYING;
     }
   }

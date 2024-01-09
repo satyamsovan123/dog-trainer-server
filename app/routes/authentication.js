@@ -6,7 +6,7 @@ const {
 } = require("../controllers/authentication/authentication");
 const { verifyAuthenticationDataRequest } = require("../middlewares");
 
-router.post("/signup", verifyAuthenticationDataRequest, signUp);
+// router.post("/signup", verifyAuthenticationDataRequest, signUp);
 router.post("/authentication", verifyAuthenticationDataRequest, authentication);
 
 module.exports = router;

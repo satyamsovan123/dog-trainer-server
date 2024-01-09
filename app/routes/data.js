@@ -23,6 +23,6 @@ router.post(
   verifyGetDataByTitleRequest,
   getDataByTitle
 );
-router.post("/addData", verifyJWT, verifyPostDataRequest, addData);
+// router.post("/addData", verifyJWT, verifyPostDataRequest, addData);
 
 module.exports = router;
