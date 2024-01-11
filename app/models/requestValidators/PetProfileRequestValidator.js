@@ -45,7 +45,7 @@ class PetProfileRequestValidator {
         .items({
           weight: Joi.number(),
           date: Joi.string(),
-          age: Joi.number(),
+          age: Joi.string(),
         })
         .messages({
           "any.required": `${userActionConstant.PET_GENDER} ${userActionConstant.IS_REQUIRED} ${userActionConstant.PROVIDE_VALID_DATA}`,
