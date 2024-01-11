@@ -55,6 +55,7 @@ const userActionConstant = {
   PET_GENDER: "Pet gender",
   PET_BREED: "Pet breed",
   PET_DOB: "Pet date of birth",
+  PET_WEIGHT: "Pet weights",
 
   DATA: "Data",
 

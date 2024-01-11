@@ -41,6 +41,15 @@ class PetProfileRequestValidator {
           "date.base": `${userActionConstant.PET_DOB} ${userActionConstant.IS_INVALID} ${userActionConstant.PROVIDE_VALID_DATA}`,
           "any.required": `${userActionConstant.PET_DOB} ${userActionConstant.IS_REQUIRED} ${userActionConstant.PROVIDE_VALID_DATA}`,
         }),
+      petWeight: Joi.array()
+        .items({
+          weight: Joi.number(),
+          date: Joi.string(),
+          age: Joi.number(),
+        })
+        .messages({
+          "any.required": `${userActionConstant.PET_GENDER} ${userActionConstant.IS_REQUIRED} ${userActionConstant.PROVIDE_VALID_DATA}`,
+        }),
     }).messages({
       "object.unknown": `${userActionConstant.REDUNDANT_DATA}`,
     });

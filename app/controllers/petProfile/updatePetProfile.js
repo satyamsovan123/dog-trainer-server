@@ -17,6 +17,7 @@ const updatePetProfile = async (req, res) => {
       petBreed: userData.petBreed,
       petGender: userData.petGender,
       petDOB: userData.petDOB,
+      petWeight: userData.petWeight,
     });
 
     const tempPetProfile = await PetProfile.findOneAndUpdate(
@@ -26,6 +27,7 @@ const updatePetProfile = async (req, res) => {
         petBreed: userData.petBreed,
         petGender: userData.petGender,
         petDOB: userData.petDOB,
+        petWeight: userData.petWeight,
       }
     );
     if (!tempPetProfile) {
