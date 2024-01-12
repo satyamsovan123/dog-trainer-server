@@ -60,7 +60,6 @@ class PetProfileRequestValidator {
     try {
       await this.validationResult;
     } catch (error) {
-      console.log(error);
       return error?.message ?? serverConstant.ERROR_OCCURRED_WHILE_VERIFYING;
     }
   }

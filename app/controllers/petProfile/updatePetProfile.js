@@ -47,8 +47,6 @@ const updatePetProfile = async (req, res) => {
 
     return res.status(generatedResponse.code).send(generatedResponse);
   } catch (error) {
-    console.log(error);
-
     const generatedResponse = responseBuilder(
       {},
       userActionConstant.UPDATE_PET_PROFILE_ERROR,
