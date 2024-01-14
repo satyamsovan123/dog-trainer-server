@@ -15,7 +15,7 @@ const updateLastTopicRead = async (req, res) => {
       {
         lastTopicRead: userData.lastTopicRead ?? { courseName: "", topic: "" },
       }
-    );
+    ).select("lastTopicRead");
     if (!data) {
       const generatedResponse = responseBuilder(
         {},
