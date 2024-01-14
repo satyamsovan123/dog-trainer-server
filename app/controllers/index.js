@@ -14,6 +14,8 @@ const { checkExistingData } = require("./data/utils/dataManipulationHelper");
 const { getCourseDetails } = require("./data/getCourseDetails");
 const { getPetProfile } = require("./petProfile/getPetProfile");
 const { updatePetProfile } = require("./petProfile/updatePetProfile");
+const { updateLastTopicRead } = require("./data/updateLastTopicRead");
+const { getLastTopicRead } = require("./data/getLastTopicRead");
 
 module.exports = {
   signUp,
@@ -29,4 +31,6 @@ module.exports = {
   getCourseDetails,
   getPetProfile,
   updatePetProfile,
+  getLastTopicRead,
+  updateLastTopicRead,
 };

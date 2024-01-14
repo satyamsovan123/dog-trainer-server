@@ -12,10 +12,15 @@ const {
   getCourseDetails,
   getPetName,
   updatePetName,
+  getLastTopicRead,
+  updateLastTopicRead,
 } = require("../controllers");
 
 router.get("/getalldata", verifyJWT, getAllData);
 router.get("/getcoursedetails", verifyJWT, getCourseDetails);
+
+router.post("/updatelasttopicread", verifyJWT, updateLastTopicRead);
+router.get("/getlasttopicread", verifyJWT, getLastTopicRead);
 
 router.post(
   "/getdatabytitle",
