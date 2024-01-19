@@ -16,7 +16,7 @@ const getLastTopicRead = async (req, res) => {
     if (!data) {
       const generatedResponse = responseBuilder(
         {},
-        userActionConstant.GET_ALL_DATA_ERROR,
+        userActionConstant.GET_LAST_TOPIC_READ_ERROR,
         statusCodeConstant.ERROR
       );
       return res.status(generatedResponse.code).send(generatedResponse);
@@ -24,7 +24,7 @@ const getLastTopicRead = async (req, res) => {
 
     const generatedResponse = responseBuilder(
       data,
-      userActionConstant.GET_ALL_COURSE_DETAILS_SUCCESS,
+      userActionConstant.GET_LAST_TOPIC_READ_SUCCESS,
       statusCodeConstant.SUCCESS
     );
 
@@ -32,7 +32,7 @@ const getLastTopicRead = async (req, res) => {
   } catch (error) {
     const generatedResponse = responseBuilder(
       {},
-      userActionConstant.GET_ALL_COURSE_DETAILS_ERROR,
+      userActionConstant.GET_LAST_TOPIC_READ_ERROR,
       statusCodeConstant.ERROR
     );
     return res.status(generatedResponse.code).send(generatedResponse);

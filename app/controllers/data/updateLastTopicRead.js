@@ -10,16 +10,20 @@ const { CourseDetail, User } = require("../../models");
 const updateLastTopicRead = async (req, res) => {
   try {
     const userData = req.body;
+    const lastTopicRead = {
+      courseName: userData.courseName ?? "",
+      topic: userData.topic ?? "",
+    };
     const data = await User.findOneAndUpdate(
       { email: userData.email },
       {
-        lastTopicRead: userData.lastTopicRead ?? { courseName: "", topic: "" },
+        lastTopicRead: lastTopicRead,
       }
     ).select("lastTopicRead");
     if (!data) {
       const generatedResponse = responseBuilder(
         {},
-        userActionConstant.UPDATE_ALL_DATA_ERROR,
+        userActionConstant.UPDATE_LAST_TOPIC_READ_ERROR,
         statusCodeConstant.ERROR
       );
       return res.status(generatedResponse.code).send(generatedResponse);
@@ -27,7 +31,7 @@ const updateLastTopicRead = async (req, res) => {
 
     const generatedResponse = responseBuilder(
       data,
-      userActionConstant.UPDATE_ALL_DATA_SUCCESS,
+      userActionConstant.UPDATE_LAST_TOPIC_READ_SUCCESS,
       statusCodeConstant.SUCCESS
     );
 
@@ -35,7 +39,7 @@ const updateLastTopicRead = async (req, res) => {
   } catch (error) {
     const generatedResponse = responseBuilder(
       {},
-      userActionConstant.UPDATE_ALL_DATA_ERROR,
+      userActionConstant.UPDATE_LAST_TOPIC_READ_ERROR,
       statusCodeConstant.ERROR
     );
     return res.status(generatedResponse.code).send(generatedResponse);

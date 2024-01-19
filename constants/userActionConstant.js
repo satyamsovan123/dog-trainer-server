@@ -19,6 +19,12 @@ const userActionConstant = {
   UPDATE_ALL_DATA_SUCCESS: "Successfully updated all training data.",
   UPDATE_ALL_DATA_ERROR: "We are unable to update all training data.",
 
+  GET_LAST_TOPIC_READ_SUCCESS: "Successfully fetched last topic read.",
+  GET_LAST_TOPIC_READ_ERROR: "We are unable to fetch last topic read.",
+
+  UPDATE_LAST_TOPIC_READ_SUCCESS: "Successfully updated last topic read.",
+  UPDATE_LAST_TOPIC_READ_ERROR: "We are unable to update last topic read.",
+
   GET_PET_PROFILE_SUCCESS: "Successfully fetched pet profile.",
   GET_PET_PROFILE_ERROR: "We are unable to fetch pet profile.",
 
