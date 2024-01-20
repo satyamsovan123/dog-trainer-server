@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "development": "NODE_ENV=development nodemon app.js",
-    "production": "NODE_ENV=production node app.js"
+    "production": "NODE_ENV=production node app.js",
+    "start": "NODE_ENV=production node app.js"
   },
   "keywords": [
     "dog-trainer-server, DogTrainer"
